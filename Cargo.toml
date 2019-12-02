@@ -1,3 +1,6 @@
 [workspace]
 
-members = []
+members = [
+    "day1",
+    "shared",
+]
