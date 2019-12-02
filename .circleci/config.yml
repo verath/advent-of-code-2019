@@ -1,0 +1,37 @@
+# Based on https://gist.github.com/zargony/de209b1a790c3cb2176c86405a51b33c
+
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: rust:1
+    working_directory: ~/project
+    environment:
+      CARGO_HOME: ~/project/.cargo
+    steps:
+      - checkout
+      - run:
+          name: Add rustfmt component
+          command: rustup component add rustfmt
+      - run:
+          name: Version information
+          command: rustc --version; cargo --version; rustup --version
+      - run:
+          name: Calculate dependencies
+          command: cargo generate-lockfile
+      - restore_cache:
+          key: cargo-cache-{{ arch }}-{{ checksum "Cargo.lock" }}
+      - run:
+          name: Build all targets
+          command: cargo build --all --all-targets
+      - save_cache:
+          paths:
+            - .cargo
+          key: cargo-cache-{{ arch }}-{{ checksum "Cargo.lock" }}
+      - run:
+          name: Run all tests
+          command: cargo test --all
+      - run:
+          name: Check code formatting
+          command: cargo fmt --all -- --check
