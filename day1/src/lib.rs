@@ -11,6 +11,6 @@ mod tests {
         assert_eq!(required_fuel(12), 2);
         assert_eq!(required_fuel(14), 2);
         assert_eq!(required_fuel(1969), 654);
-        assert_eq!(required_fuel(100756), 33583);
+        assert_eq!(required_fuel(100_756), 33583);
     }
 }

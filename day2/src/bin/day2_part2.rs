@@ -14,7 +14,7 @@ fn main() {
             program[2] = verb;
             day2::run(&mut program);
             let output = program[0];
-            if output == 19690720 {
+            if output == 19_690_720 {
                 println!("{}", 100 * noun + verb);
                 return;
             }

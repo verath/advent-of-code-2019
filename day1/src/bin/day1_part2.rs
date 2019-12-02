@@ -28,6 +28,6 @@ mod tests {
     fn test_recursive_required_fuel() {
         assert_eq!(recursive_required_fuel(14), 2);
         assert_eq!(recursive_required_fuel(1969), 966);
-        assert_eq!(recursive_required_fuel(100756), 50346);
+        assert_eq!(recursive_required_fuel(100_756), 50346);
     }
 }
