@@ -11,7 +11,7 @@ fn recursive_required_fuel(module_mass: i64) -> i64 {
 }
 
 fn main() {
-    let input = shared::read_arg_path_to_string();
+    let input = io::read_arg_path_to_string();
     let total_required_fuel = input
         .split('\n')
         .map(|s| i64::from_str(s).unwrap())

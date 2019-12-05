@@ -4,14 +4,14 @@
 name = "day1"
 version = "0.1.0"
 dependencies = [
- "shared 0.1.0",
+ "io 0.1.0",
 ]
 
 [[package]]
 name = "day2"
 version = "0.1.0"
 dependencies = [
- "shared 0.1.0",
+ "io 0.1.0",
 ]
 
 [[package]]
@@ -19,6 +19,6 @@ name = "day4"
 version = "0.1.0"
 
 [[package]]
-name = "shared"
+name = "io"
 version = "0.1.0"
 

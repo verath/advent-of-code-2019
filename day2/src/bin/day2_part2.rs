@@ -1,7 +1,7 @@
 use std::str::FromStr;
 
 fn main() {
-    let input = shared::read_arg_path_to_string();
+    let input = io::read_arg_path_to_string();
     let orig_program: Vec<u64> = input
         .split(',')
         .map(|s| u64::from_str(s).unwrap())
