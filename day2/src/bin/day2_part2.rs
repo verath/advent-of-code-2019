@@ -1,7 +1,6 @@
 use std::str::FromStr;
 
-fn main() {
-    let input = io::read_arg_path_to_string();
+fn day2_part2(input: &str) -> i64 {
     let orig_program: Vec<i64> = input
         .split(',')
         .map(|s| i64::from_str(s).unwrap())
@@ -15,9 +14,25 @@ fn main() {
             let (program, _) = intcode::run(&program, &[]);
             let output = program[0];
             if output == 19_690_720 {
-                println!("{}", 100 * noun + verb);
-                return;
+                return 100 * noun + verb;
             }
         }
+    }
+    panic!("no solution");
+}
+
+fn main() {
+    let input = day2::INPUT.trim_end();
+    println!("{}", day2_part2(input));
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_day2_part2() {
+        let input = day2::INPUT.trim_end();
+        assert_eq!(day2_part2(input), 2003);
     }
 }

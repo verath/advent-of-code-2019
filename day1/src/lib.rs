@@ -1,3 +1,5 @@
+pub const INPUT: &str = include_str!("../input.txt");
+
 pub fn required_fuel(mass: i64) -> i64 {
     (mass / 3) - 2
 }

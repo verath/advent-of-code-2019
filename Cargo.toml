@@ -6,5 +6,4 @@ members = [
     "day4",
     "day5",
     "intcode",
-    "io",
 ]
